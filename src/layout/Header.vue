@@ -5,7 +5,7 @@ const logo =
 const linkList = [
   {
     name: "Home",
-    url: "/home",
+    url: "/#/home",
   },
   {
     name: "Archives",

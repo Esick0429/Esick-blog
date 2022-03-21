@@ -1,7 +1,9 @@
-<script setup lang="ts">
+<script setup>
 </script>
 <template>
-<div>1</div>
+	<div>{{ ArchiveData.archiveTitle }}</div>
+	<div>{{ ArchiveData.archiveContent }}</div>
+	<div>{{ ArchiveData.tagName }}</div>
+	<div>{{ ArchiveData.archiveDate }}</div>
 </template>
-<style scoped>
-</style>
+<style scoped></style>
