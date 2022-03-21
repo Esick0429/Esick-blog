@@ -1,11 +1,11 @@
 <script setup>
 import { onMounted, ref } from 'vue';
 import {useRoute, useRouter} from "vue-router"
-import { getArchiveData } from '../api/index.js';
+import { getArchiveList } from '../api/index.js';
 let ArchiveData = ref([]);
-const router = useRoute()
+const router = useRouter()
 onMounted(async () => {
-	let res = await getArchiveData();
+	let res = await getArchiveList();
 	console.log(res.data);
 	for(let i in res.data){
 		console.log(i);
@@ -14,8 +14,8 @@ onMounted(async () => {
 });
 function jumpArchive(archiveTitle){
 	router.push({
-		parh:"/Archive",
-		query:{archiveTitle:archiveTitle}
+		path:"/archives",
+		query:{archiveId:archiveTitle}
 	})
 }
 </script>
@@ -27,7 +27,7 @@ function jumpArchive(archiveTitle){
 		<div class="itemContent"  v-for="j of i" :key="j.archiveTitle">
 			<div class="articleDate">{{j.archiveDate}}</div>
 			<div class="articleTitle">
-				<a @click="jumpArchive(j.archiveTitle)">{{j.archiveTitle}}</a>
+				<a @click="jumpArchive(j.archiveId)">{{j.archiveTitle}}</a>
 			</div>
 		</div>
 	</div>
