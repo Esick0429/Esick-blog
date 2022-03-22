@@ -14,7 +14,7 @@ import Home from "../components/Home.vue";
 
 <style scoped>
 .view {
-  width: 80%;
+  width: 60%;
   position: relative;
   margin: 0 auto;
   padding: 0 3rem;

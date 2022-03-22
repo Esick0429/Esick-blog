@@ -18,5 +18,7 @@ section{
 }
 .about{
   line-height: 1.5rem;
+  font-size: var(--contentFs);
+  letter-spacing: 0.15rem;
 }
 </style>

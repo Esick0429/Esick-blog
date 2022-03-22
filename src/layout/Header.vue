@@ -94,19 +94,21 @@ header {
 }
 .title {
   font-size: 2.4rem;
+	color: #FFFfCC;
 }
 .nav {
   justify-content: space-between;
   padding: 0 5px;
 }
 .nav div {
-  width: 20%;
+  width: 20%; 
 }
 .linkStyle {
   text-decoration: none;
+	color: #fff;
 }
 .linkStyle:visited {
-  color: #000;
+  color: #fff;
 }
 .linkStyle:hover {
   color: #999999;

@@ -10,8 +10,14 @@
 <style>
 body {
   font-size: 62.5%;
+  padding: 0;
+  margin: 0;
+  background-color: #99CCCC;
 }
 #app {
-  color: #2c3e50;
+  color: #fff;
+  --titleFs: 32px;
+  --contentFs: 18px;
+  padding-top: 15px;
 }
 </style>

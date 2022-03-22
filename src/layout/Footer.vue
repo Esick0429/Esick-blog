@@ -30,7 +30,7 @@ const linkList = [
           :key="i.name"
           :style="
             index != linkList.length - 1
-              ? { borderRight: '1px dashed' }
+              ? { borderRight: '1px solid' }
               : 'none'
           "
         >
@@ -50,26 +50,41 @@ const linkList = [
   flex-direction: column;
 }
 footer {
-  width: 90%;
-  margin: 0 auto;
+  width: 100%;
+  /* margin: 0 auto; */
+  bottom: 0;
+  position: absolute;
   /* height: 5rem; */
   display: flex;
   justify-content: space-between;
   align-items: center;
   text-align: center;
+  font-size: var(--contentFs);
+  font-weight: 500;
 }
 .footer_left {
-  width: 40%;
+  width: 45%;
 }
 .footer_right {
-  width: 40%;
+  width: 45%;
 }
 .nav {
   justify-content: space-between;
   padding: 0 5px;
 }
 .nav div {
-  width: 20%;
+  width: 25%;
+}
+.linkStyle {
+  text-decoration: none;
+	color: #fff;
+}
+.linkStyle:visited {
+  color: #fff;
+}
+.linkStyle:hover {
+  color: #999999;
+  text-decoration: underline;
 }
 @media screen and (max-width: 768px) {
   footer {
