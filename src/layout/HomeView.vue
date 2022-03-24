@@ -8,8 +8,9 @@ import Home from "../components/Home.vue";
   <div class="view">
     <Header />
     <Home />
+    <Footer />
   </div>
-  <Footer />
+
 </template>
 
 <style scoped>
@@ -18,5 +19,13 @@ import Home from "../components/Home.vue";
   position: relative;
   margin: 0 auto;
   padding: 0 3rem;
+  height: 100vh;
+  min-height: 100vh;
+}
+@media screen and (max-width: 768px) {
+  .view{
+    width: 100%;
+    padding: 0;
+  }
 }
 </style>

@@ -23,7 +23,7 @@ function jumpArchive(archiveTitle: any){
 <template>
 	<div class="item" v-for="(i,index) of ArchiveData" >
 		<div class="itemTitle">
-			<a href="" style="text-decoration: none;color: #ffffcc;"> {{index}} </a>
+			<a href="" style="text-decoration: none;color: var(--titlecolor);"> {{index}} </a>
 		</div>
 		<div class="itemContent"  v-for="j of i" :key="j['archiveTitle']">
 			<div class="articleDate">{{dayjs(j['archiveDate']).format("YYYY-MM-DD")}}</div>

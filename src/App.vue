@@ -18,6 +18,7 @@ body {
   color: #fff;
   --titleFs: 32px;
   --contentFs: 18px;
-  padding-top: 15px;
+  --titlecolor:#ffffcc;
+  font-family:Menlo,"Meslo LG","Helvetica Neue",Helvetica,Arial,sans-serif,"微软雅黑",monospace
 }
 </style>

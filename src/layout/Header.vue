@@ -13,7 +13,7 @@ const linkList = [
   },
   {
     name: "About",
-    url: "/about",
+    url: "/#/about",
   },
   {
     name: "Github",
@@ -72,8 +72,10 @@ function openDrop() {
 <style scoped>
 header {
   width: 100%;
-  height: 100%;
+  /* height: 100%; */
   align-items: center;
+  position: relative;
+  top: 10px;
   z-index: 100000;
 }
 .flex_row {
@@ -120,7 +122,7 @@ header {
 .dropDown {
   position: absolute;
   top: 30px;
-  left: -0.3rem;
+  /* left: -0.3rem; */
   width: 100%;
 }
 .dropDown ul {

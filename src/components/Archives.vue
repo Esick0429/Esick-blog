@@ -30,8 +30,8 @@ onMounted(async () => {
 		<section>
 			<div class="archive_content">{{archiveData.archiveContent}}</div>
 		</section>
+		<Footer />
   </div>
-	<Footer />
 </template>
 <style scoped>
 .flex_column{
@@ -48,6 +48,7 @@ onMounted(async () => {
 }
 .title{
 	font-size: var(--titleFs);
+	color: var(--titlecolor);
 }
 .archive_info{
 	font-size: var(--contentFs);
@@ -56,6 +57,18 @@ onMounted(async () => {
 	width: 30%;
 }
 .archive_content{
-	font-size: 1.6rem;
+	font-size: var(--contentFs);
+	white-space: pre-line;
+	font-family: cursive;
+}
+@media screen and (max-width: 768px) {
+	.container{
+		width: 100%;
+		padding: 0 8px;
+	}
+	.archive_info{
+		flex-direction: column;
+		width: 100%;
+	}
 }
 </style>

@@ -50,7 +50,7 @@ const linkList = [
   flex-direction: column;
 }
 footer {
-  width: 100%;
+  width: calc(100vw * (1152/1920));
   /* margin: 0 auto; */
   bottom: 0;
   position: absolute;
@@ -63,10 +63,11 @@ footer {
   font-weight: 500;
 }
 .footer_left {
-  width: 45%;
+  width: 49%;
+  text-align: left;
 }
 .footer_right {
-  width: 45%;
+  width: 50%;
 }
 .nav {
   justify-content: space-between;
@@ -89,9 +90,11 @@ footer {
 @media screen and (max-width: 768px) {
   footer {
     flex-direction: column;
+    width: 100%;
   }
   .footer_left {
     width: 100%;
+    text-align: center;
   }
   .footer_right {
     width: 100%;
