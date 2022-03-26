@@ -1,13 +1,13 @@
 <script setup lang="ts">
 import Header from "../layout/Header.vue";
 import Footer from "../layout/Footer.vue";
-import Home from "../components/Home.vue";
+// import Home from "../components/Home.vue";
 </script>
 
 <template>
   <div class="view">
     <Header />
-    <Home />
+    <router-view />
     <Footer />
   </div>
 
