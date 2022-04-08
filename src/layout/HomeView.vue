@@ -7,7 +7,9 @@ import Footer from "../layout/Footer.vue";
 <template>
   <div class="view">
     <Header />
-    <router-view />
+    <section>
+      <router-view />
+    </section>
     <Footer />
   </div>
 
@@ -15,12 +17,17 @@ import Footer from "../layout/Footer.vue";
 
 <style scoped>
 .view {
-  width: 60%;
+  width: 100%;
   position: relative;
   margin: 0 auto;
   padding: 0 3rem;
-  height: 100vh;
+  /* height: 100vh; */
   min-height: 100vh;
+}
+section {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding: 0 0.5rem;
 }
 @media screen and (max-width: 768px) {
   .view{

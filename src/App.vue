@@ -15,10 +15,12 @@ body {
   background-color: #99CCCC;
 }
 #app {
-  color: #fff;
   --titleFs: 32px;
   --contentFs: 18px;
   --titlecolor:#ffffcc;
-  font-family:Menlo,"Meslo LG","Helvetica Neue",Helvetica,Arial,sans-serif,"微软雅黑",monospace
+  font-family:Menlo,"Meslo LG","Helvetica Neue",Helvetica,Arial,sans-serif,"微软雅黑",monospace;
+  color: #2c3e50;
+  max-width: 60%;
+  margin: 0 auto;
 }
 </style>

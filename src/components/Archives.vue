@@ -2,7 +2,6 @@
 import { useRouter, useRoute } from "vue-router";
 import { onMounted, reactive, ref } from "vue";
 import { getArchiveData } from "../api/index";
-import Footer from "../layout/Footer.vue";
 import dayjs from 'dayjs';
 const route = useRoute();
 
@@ -30,7 +29,6 @@ onMounted(async () => {
 		<section>
 			<div class="archive_content">{{archiveData.archiveContent}}</div>
 		</section>
-		<Footer />
   </div>
 </template>
 <style scoped>
@@ -43,18 +41,19 @@ onMounted(async () => {
 	flex-direction: row;
 }
 .container {
-	width: 60%;
-	margin: 0 auto;
+	/* width: 60%; */
+	/* margin: 0 auto; */
 }
 .title{
 	font-size: var(--titleFs);
 	color: var(--titlecolor);
+	font-family:cursive;
 }
 .archive_info{
 	font-size: var(--contentFs);
 	justify-content: space-between;
 	margin: 8px 0;
-	width: 30%;
+	width: 20%;
 }
 .archive_content{
 	font-size: var(--contentFs);
