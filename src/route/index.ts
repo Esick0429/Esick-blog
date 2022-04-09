@@ -4,7 +4,7 @@ const homeIndex = () => import("../components/Home.vue");
 const Notfound = () => import("../components/Not found.vue");
 const archives = () => import("../components/Archives.vue");
 const tagList = () => import("../components/TagList.vue");
-const routes = [
+const routes:any = [
   { path: "/", redirect: "/index" },
   { path: "/:pathMatch(.*)", redirect: "/404" },
   {

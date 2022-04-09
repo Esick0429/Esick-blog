@@ -18,9 +18,9 @@ import HomeItem from "../common/HomeItem.vue";
 <style scoped>
 
 .about {
-  line-height: 1.5rem;
+  /* line-height: calc(100vw * (25/1920)); */
   font-size: var(--contentFs);
-  letter-spacing: 0.15rem;
+  letter-spacing: calc(100vw * (1.5/1920));
   width: 100%;
   color: #666666;
   font-weight: bold;

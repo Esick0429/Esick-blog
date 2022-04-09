@@ -39,8 +39,8 @@ function jumpArchive(archiveTitle: any){
 	font-size: var(--titleFs);
 	font-style: normal;
 	font-weight: 700;
-	margin-top: 3rem;
-	margin-bottom: 1rem;
+	margin-top: calc(100vw * (30/1920));
+	margin-bottom: calc(100vw * (10/1920));
 	display: block;
 }
 .itemContent {
@@ -48,18 +48,18 @@ function jumpArchive(archiveTitle: any){
 	flex-direction: row;
 	justify-content: flex-start;
 	align-content: center;
-	margin: 15px 0px;
+	margin: calc(100vw * (15/1920)) 0px;
 	font-size: var(--contentFs);
 }
 .articleDate {
-	margin-right: 3rem;
+	margin-right: calc(100vw * (30/1920));
 }
 @media screen and (max-width: 768px) {
 	.itemContent {
 		flex-direction: column;
 	}
 	.articleDate {
-		margin-bottom: 0.5rem;
+		margin-bottom: calc(100vw * (5/1920));
 	}
 }
 </style>

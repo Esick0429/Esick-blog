@@ -87,27 +87,29 @@ header {
   flex-direction: column;
 }
 .logo img {
-  width: 5rem;
-  height: 5rem;
-  border-radius: 5rem;
+  width: calc(100vw * (80 / 1920));
+  height: calc(100vw * (80 / 1920));
+  border-radius: calc(100vw * (80 / 1920));
 }
 .header_right {
-  padding-left: 1.5rem;
+  width: 100%;
+  padding-left: calc(100vw * (15 / 1920));
 }
 .title {
-  font-size: 2.4rem;
-	color: #FFFfCC;
+  font-size: calc(100vw * (50 / 1920));
+  color: #ffffcc;
 }
 .nav {
   justify-content: space-between;
   padding: 0 5px;
 }
 .nav div {
-  width: 20%; 
+  width: 20%;
+  font-size: var(--contentFs);
 }
 .linkStyle {
   text-decoration: none;
-	color: #fff;
+  color: #fff;
 }
 .linkStyle:visited {
   color: #fff;
@@ -134,10 +136,11 @@ header {
 }
 .dropDown li {
   height: 1.5rem;
+  line-height:1.5rem
 }
 .dropDown li a {
   color: #666;
-  line-height: 1.5rem;
+  line-height: calc(100vw * (15 / 1920));
   text-decoration: none;
 }
 .dropDown li a:hover {

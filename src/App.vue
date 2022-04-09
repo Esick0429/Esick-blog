@@ -9,14 +9,13 @@
 
 <style>
 body {
-  font-size: 62.5%;
   padding: 0;
   margin: 0;
   background-color: #99CCCC;
 }
 #app {
-  --titleFs: 32px;
-  --contentFs: 18px;
+  --titleFs: calc(100vw * (36/1920));
+  --contentFs: calc(100vw * (18/1920));
   --titlecolor:#ffffcc;
   font-family:Menlo,"Meslo LG","Helvetica Neue",Helvetica,Arial,sans-serif,"微软雅黑",monospace;
   color: #2c3e50;

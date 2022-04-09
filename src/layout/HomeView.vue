@@ -20,14 +20,14 @@ import Footer from "../layout/Footer.vue";
   width: 100%;
   position: relative;
   margin: 0 auto;
-  padding: 0 3rem;
+  padding: 0 calc(100vw * (30/1920));
   /* height: 100vh; */
   min-height: 100vh;
 }
 section {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  padding: 0 0.5rem;
+  margin-top: calc(100vw * (40/1920));
+  margin-bottom: calc(100vw * (20/1920));
+  padding: 0 calc(100vw * (5/1920));
 }
 @media screen and (max-width: 768px) {
   .view{
