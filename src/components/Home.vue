@@ -27,8 +27,6 @@ import HomeItem from "../common/HomeItem.vue";
   font-family:cursive
 }
 .srcoll_view{
-  height: 80%;
-  overflow-y: auto;
   width: 100%;
 }
 </style>

@@ -21,5 +21,6 @@ body {
   color: #2c3e50;
   max-width: 60%;
   margin: 0 auto;
+  height: 100vh;
 }
 </style>

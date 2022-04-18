@@ -3,7 +3,7 @@ import axios from 'axios'
 //请求拦截器
 
 const service:any = axios.create({
-  // baseURL: 'https://api.esick.xyz',
+  baseURL: 'http://127.0.0.1:4002',
   timeout: 5000
 })
 
