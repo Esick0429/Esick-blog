@@ -5,10 +5,6 @@ const linkList = [
     url: "/home",
   },
   {
-    name: "Archives",
-    url: "/archives",
-  },
-  {
     name: "About",
     url: "/about",
   },
@@ -29,9 +25,7 @@ const linkList = [
           v-for="(i, index) of linkList"
           :key="i.name"
           :style="
-            index != linkList.length - 1
-              ? { borderRight: '1px solid' }
-              : 'none'
+            index != linkList.length - 1 ? { borderRight: '1px solid' } : 'none'
           "
         >
           <a :href="i.url" class="linkStyle">{{ i.name }}</a>
@@ -50,7 +44,7 @@ const linkList = [
   flex-direction: column;
 }
 footer {
-  width: calc(100vw * (1152/1920));
+  width: calc(100vw * (1152 / 1920));
   /* margin: 0 auto; */
   bottom: 0;
   position: absolute;
@@ -75,10 +69,12 @@ footer {
 }
 .nav div {
   width: 25%;
+  text-align: center;
+  flex: 1;
 }
 .linkStyle {
   text-decoration: none;
-	color: #fff;
+  color: #fff;
 }
 .linkStyle:visited {
   color: #fff;

@@ -8,10 +8,6 @@ const linkList = [
     url: "/#/index",
   },
   {
-    name: "Archives",
-    url: "/#/tagList",
-  },
-  {
     name: "About",
     url: "/#/about",
   },
@@ -42,6 +38,7 @@ function openDrop() {
               ? { borderRight: '1px dashed' }
               : 'none'
           "
+          class="nav_content"
         >
           <a :href="i.url" class="linkStyle">{{ i.name }}</a>
         </div>
@@ -106,6 +103,8 @@ header {
 .nav div {
   width: 20%;
   font-size: var(--contentFs);
+  text-align: center;
+  flex: 1;
 }
 .linkStyle {
   text-decoration: none;

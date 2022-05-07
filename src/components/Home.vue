@@ -1,32 +1,38 @@
 <script setup lang="ts">
+import { getEverydayQuotes } from "../api/index";
+import { onMounted, ref } from "vue";
 import HomeItem from "../common/HomeItem.vue";
+let everdyQuotes = ref({});
+onMounted(async () => {
+  let res = await getEverydayQuotes();
+  everdyQuotes.value = res.data;
+  console.log(everdyQuotes);
+});
 </script>
 <template>
-    <div class="about">
-      <span>
-      那一天我二十一岁，在我一生的黄金时代，我有好多奢望。我想爱，想吃，还想在一瞬间变成天上半明半暗的云，后来我才知道，生活就是个缓慢受锤的过程，人一天天老下去，奢望也一天天消逝，最后变得像挨了锤的牛一样。可是我过二十一岁生日时没有预见到这一点。我觉得自己会永远生猛下去，什么也锤不了我。
-      </span>
-      <br>
-      <span style="float: right;">
-        ————王小波《黄金时代》
-      </span>
-    </div>
-    <div class="srcoll_view">
-      <HomeItem />
-    </div>
+  <div class="about">
+    <span>
+      {{everdyQuotes['content']}}<br>
+      {{everdyQuotes['translation']}}
+    </span>
+    <br />
+    <span style="float: right"> ——{{everdyQuotes['author']}} </span>
+  </div>
+  <div class="srcoll_view">
+    <HomeItem />
+  </div>
 </template>
 <style scoped>
-
 .about {
   /* line-height: calc(100vw * (25/1920)); */
   font-size: var(--contentFs);
-  letter-spacing: calc(100vw * (1.5/1920));
+  letter-spacing: calc(100vw * (1.5 / 1920));
   width: 100%;
   color: #666666;
   font-weight: bold;
-  font-family:cursive
+  font-family: cursive;
 }
-.srcoll_view{
+.srcoll_view {
   width: 100%;
 }
 </style>

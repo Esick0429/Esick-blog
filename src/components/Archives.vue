@@ -5,7 +5,7 @@ import { getArchiveData } from "../api/index";
 import dayjs from "dayjs";
 const route = useRoute();
 
-let archiveId = route.query.archiveId;
+let archiveId = route.query.archiveId as string;
 
 let archiveData: any = ref({});
 onMounted(async () => {

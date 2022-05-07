@@ -66,9 +66,9 @@ function gotoTag(tagName: string) {
   margin-right: calc(100vw * (30 / 1920));
 }
 @media screen and (max-width: 768px) {
-  .itemContent {
+  /* .itemContent {
     flex-direction: column;
-  }
+  } */
   .articleDate {
     margin-bottom: calc(100vw * (5 / 1920));
   }

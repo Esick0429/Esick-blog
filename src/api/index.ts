@@ -1,16 +1,16 @@
 import request from '../util/request.js'
 //获取所有文章列表
-export function getArchiveList(data?:any) {
+export function getArchiveList(data?:object) {
   return request({
-    url: '/api/getArchiveList',
+    url: '/getArchiveList',
     method: 'get',
     data
   })
 }
 //获取文章信息
-export function getArchiveData(data:any) {
+export function getArchiveData(data:{archiveId:string}) {
   return request({
-    url: `/api/getArchiveData?archiveId=${data.archiveId}`,
+    url: `/getArchiveData?archiveId=${data.archiveId}`,
     method: 'get',
     data
   })
@@ -18,7 +18,7 @@ export function getArchiveData(data:any) {
 //获取标签列表
 export function getTagList(data?:any){
   return request({
-    url: `/api/getTagList`,
+    url: `/getTagList`,
     method: 'get',
     data
   })
@@ -27,8 +27,16 @@ export function getTagList(data?:any){
 //根据tagid获取文章列表
 export function getTagArchiveList(data:{tagName:string}){
   return request({
-    url: `/api/getTagArchiveList?tagName=${data.tagName}`,
+    url: `/getTagArchiveList?tagName=${data.tagName}`,
     method: 'get',
     data
+  })
+}
+
+//获取每日一句
+export  function getEverydayQuotes(){
+  return request({
+    url:`/getEverydayQuotes`,
+    method: 'get'
   })
 }
