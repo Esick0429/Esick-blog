@@ -10,10 +10,8 @@ let archiveId = route.query.archiveId as string;
 let archiveData: any = ref({});
 onMounted(async () => {
   let { data } = await getArchiveData({ archiveId: archiveId });
-  console.log(data);
   data.data.archiveDate = dayjs(data.data.archiveDate).format("YY-MM-DD");
   archiveData.value = data.data;
-  console.log(archiveData.value);
 });
 </script>
 <template>

@@ -2,7 +2,7 @@
 import { getEverydayQuotes } from "../api/index";
 import { onMounted, ref } from "vue";
 import HomeItem from "../common/HomeItem.vue";
-let everdyQuotes = ref({});
+let everdyQuotes: any = ref({});
 onMounted(async () => {
   let res = await getEverydayQuotes();
   everdyQuotes.value = res.data;
@@ -12,11 +12,11 @@ onMounted(async () => {
 <template>
   <div class="about">
     <span>
-      {{everdyQuotes['content']}}<br>
-      {{everdyQuotes['translation']}}
+      {{ everdyQuotes.content }}<br />
+      {{ everdyQuotes.translation }}
     </span>
     <br />
-    <span style="float: right"> ——{{everdyQuotes['author']}} </span>
+    <span style="float: right"> ——{{ everdyQuotes.author }} </span>
   </div>
   <div class="srcoll_view">
     <HomeItem />

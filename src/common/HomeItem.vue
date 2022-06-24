@@ -21,7 +21,7 @@ function jumpArchive(archiveId: any) {
 function gotoTag(tagName: string) {
   router.push({
     name: "tagList",
-    query: { tagName: tagName },
+    params: { tagName: tagName },
   });
 }
 </script>
@@ -58,9 +58,9 @@ function gotoTag(tagName: string) {
   justify-content: flex-start;
   align-content: center;
   margin: calc(100vw * (15 / 1920)) 0px;
-  height: calc(100vw * (40/1920));
+  height: calc(100vw * (40 / 1920));
   font-size: var(--contentFs);
-	line-height: calc(100vw * (40/1920));
+  line-height: calc(100vw * (40 / 1920));
 }
 .articleDate {
   margin-right: calc(100vw * (30 / 1920));
