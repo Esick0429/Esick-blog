@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from "vue";
 const logo =
-  "http://119.91.27.40:4000/images/image_1641988377959_a8a933dd84336dc9c3570b3886bf0c9a.jpeg";
+  "http://119.91.27.40:4000/images/image_1642000592878_a8a933dd84336dc9c3570b3886bf0c9a.jpeg";
 const linkList = [
   {
     name: "Home",

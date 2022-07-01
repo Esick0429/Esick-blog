@@ -24,7 +24,9 @@ onMounted(async () => {
       </div>
     </header>
     <section>
-      <div class="archive_content">{{ archiveData.archiveContent }}</div>
+      <div class="archive_content" >
+        <div v-html="archiveData.archiveContent"></div>
+      </div>
     </section>
   </div>
 </template>
