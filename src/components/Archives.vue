@@ -24,7 +24,7 @@ onMounted(async () => {
       </div>
     </header>
     <section>
-      <div class="archive_content" >
+      <div class="archive_content">
         <div v-html="archiveData.archiveContent"></div>
       </div>
     </section>
@@ -44,6 +44,25 @@ onMounted(async () => {
 .container {
   /* width: 60%; */
   /* margin: 0 auto; */
+}
+
+section {
+  height: 70vh;
+  overflow: auto;
+}
+
+section::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+section::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 30px;
+  box-shadow: inset 2px 2px 2px hsla(0, 0%, 100%, 0.25),
+    inset -2px -2px 2px rgba(0, 0, 0, 0.25);
+}
+section::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
 }
 
 .title {
