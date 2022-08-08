@@ -71,7 +71,7 @@ function jump(index: string) {
       </ul>
     </div>
   </header>
-  <!-- <div class="mb" v-show="flag"></div> -->
+  <div class="mb" v-show="flag" @click="flag = false"></div>
 </template>
 <style scoped>
 header {
@@ -129,7 +129,7 @@ header {
 }
 .dropDown {
   position: absolute;
-  top: 30px;
+  top: calc(100vw * (40 / 375));
   /* left: -0.3rem; */
   width: 100%;
 }
@@ -140,6 +140,7 @@ header {
   list-style: none;
   text-align: center;
   background: #eee;
+  border-radius: calc(100vw * (8 / 375));
 }
 .dropDown li {
   height: 1.5rem;
