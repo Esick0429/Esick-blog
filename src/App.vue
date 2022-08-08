@@ -4,23 +4,29 @@
 </script>
 
 <template>
-    <router-view />
+  <router-view />
 </template>
 
 <style>
 body {
   padding: 0;
   margin: 0;
-  background-color: #99CCCC;
+  background-color: #99cccc;
 }
 #app {
-  --titleFs: calc(100vw * (36/1920));
-  --contentFs: calc(100vw * (18/1920));
-  --titlecolor:#ffffcc;
-  font-family:Menlo,"Meslo LG","Helvetica Neue",Helvetica,Arial,sans-serif,"微软雅黑",monospace;
+  --titleFs: calc(100vw * (36 / 1920));
+  --contentFs: calc(100vw * (18 / 1920));
+  --titlecolor: #ffffcc;
+  font-family: Menlo, "Meslo LG", "Helvetica Neue", Helvetica, Arial, sans-serif,
+    "微软雅黑", monospace;
   color: #2c3e50;
-  max-width: 60%;
-  margin: 0 auto;
+  width: 100vw;
   height: 100vh;
+}
+@media screen and (max-width: 768px) {
+  #app {
+    --titleFs: calc(100vw * (24 / 375));
+    --contentFs: calc(100vw * (18 / 375));
+  }
 }
 </style>

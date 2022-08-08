@@ -1,25 +1,31 @@
 <script setup lang="ts">
 import { ref } from "vue";
+import { useRouter } from "vue-router";
 const logo =
-  "http://119.91.27.40:4000/images/image_1642000592878_a8a933dd84336dc9c3570b3886bf0c9a.jpeg";
+  "https://api.esick.work/images/image_1642000592878_a8a933dd84336dc9c3570b3886bf0c9a.jpeg";
 const linkList = [
   {
     name: "Home",
-    url: "/#/index",
+    url: "index",
   },
   {
-    name: "About",
-    url: "/#/about",
+    name: "tagList",
+    url: "tagList",
   },
   {
     name: "Github",
     url: "https://github.com/Esick0429",
+    outside: true,
   },
 ];
 let flag = ref(false);
-
+const router = useRouter();
 function openDrop() {
   flag.value = !flag.value;
+}
+function jump(index: string) {
+  router.push(index);
+  flag.value = false;
 }
 </script>
 <template>
@@ -27,7 +33,7 @@ function openDrop() {
     <div class="logo">
       <img :src="logo" alt="" />
     </div>
-    <div class="header_right flex column">
+    <div class="header_right flex_column">
       <div class="title">Hello Esick</div>
       <div class="nav flex_row">
         <div
@@ -59,7 +65,8 @@ function openDrop() {
     <div class="dropDown" v-show="flag">
       <ul>
         <li v-for="i of linkList" :key="i.name">
-          <a :href="i.url">{{ i.name }}</a>
+          <div @click="jump(i.url)" v-if="!i.outside">{{ i.name }}</div>
+          <a :href="i.url" v-if="i.outside">{{ i.name }}</a>
         </li>
       </ul>
     </div>
@@ -129,13 +136,14 @@ header {
 .dropDown ul {
   width: 100%;
   padding: 0;
+  margin: 0;
   list-style: none;
   text-align: center;
   background: #eee;
 }
 .dropDown li {
   height: 1.5rem;
-  line-height:1.5rem
+  line-height: 1.5rem;
 }
 .dropDown li a {
   color: #666;
@@ -158,8 +166,8 @@ header {
   background-color: rgba(0, 0, 0, 0.8);
   backdrop-filter: blur(2.5px);
 }
-@media screen and (min-width:769px) {
-  .header_right{
+@media screen and (min-width: 769px) {
+  .header_right {
     width: 50%;
   }
 }

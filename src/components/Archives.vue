@@ -81,13 +81,13 @@ section::-webkit-scrollbar-track {
 .archive_content {
   font-size: var(--contentFs);
   white-space: pre-line;
-  font-family: cursive;
 }
 
 @media screen and (max-width: 768px) {
   .container {
     width: 100%;
     padding: 0 8px;
+    box-sizing: border-box;
   }
 
   .archive_info {

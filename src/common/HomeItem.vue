@@ -70,7 +70,26 @@ function gotoTag(tagName: string) {
     flex-direction: column;
   } */
   .articleDate {
-    margin-bottom: calc(100vw * (5 / 1920));
+    margin-bottom: calc(100vw * (5 / 375));
+  }
+  .itemTitle {
+    letter-spacing: 0.01em;
+    font-size: var(--titleFs);
+    font-style: normal;
+    font-weight: 700;
+    margin-top: calc(100vw * (12 / 375));
+    margin-bottom: calc(100vw * (10 / 375));
+    display: block;
+  }
+  .itemContent {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-content: center;
+    margin: calc(100vw * (8 / 375)) 0px;
+    height: calc(100vw * (28 / 375));
+    font-size: var(--contentFs);
+    line-height: calc(100vw * (28 / 375));
   }
 }
 </style>

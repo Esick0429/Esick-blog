@@ -1,18 +1,24 @@
 <script setup lang="ts">
+import { useRouter } from "vue-router";
+const router = useRouter();
 const linkList = [
   {
     name: "Home",
-    url: "/home",
+    url: "index",
   },
   {
-    name: "About",
-    url: "/about",
+    name: "tagList",
+    url: "tagList",
   },
   {
     name: "Github",
     url: "https://github.com/Esick0429",
+    outside: true,
   },
 ];
+function jump(index: string) {
+  router.push(index);
+}
 </script>
 <template>
   <footer>
@@ -25,10 +31,13 @@ const linkList = [
           v-for="(i, index) of linkList"
           :key="i.name"
           :style="
-            index != linkList.length - 1 ? { borderRight: '1px solid' } : 'none'
+            index != linkList.length - 1
+              ? { borderRight: '1px solid #fff' }
+              : 'none'
           "
         >
-          <a :href="i.url" class="linkStyle">{{ i.name }}</a>
+          <div @click="jump(i.url)" v-if="!i.outside">{{ i.name }}</div>
+          <a :href="i.url" class="linkStyle" v-if="i.outside">{{ i.name }}</a>
         </div>
       </div>
     </div>
@@ -44,7 +53,7 @@ const linkList = [
   flex-direction: column;
 }
 footer {
-  width: calc(100vw * (1152 / 1920));
+  width: 100%;
   /* margin: 0 auto; */
   bottom: 0;
   position: absolute;
@@ -68,16 +77,16 @@ footer {
   padding: 0 5px;
 }
 .nav div {
-  width: 25%;
+  width: 100%;
   text-align: center;
   flex: 1;
 }
 .linkStyle {
   text-decoration: none;
-  color: #fff;
+  color: #000;
 }
 .linkStyle:visited {
-  color: #fff;
+  color: #000;
 }
 .linkStyle:hover {
   color: #999999;

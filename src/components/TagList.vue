@@ -79,4 +79,18 @@ function jumpArchive(archiveId: any) {
 .archiveDate {
   margin-right: calc(100vw * 20 / 1920);
 }
+@media screen and (max-width: 768px) {
+  /* .itemContent {
+    flex-direction: column;
+  } */
+  .archiveItem {
+    margin: calc(100vw * (8 / 375)) 0px;
+    height: calc(100vw * (28 / 375));
+    font-size: var(--contentFs);
+    line-height: calc(100vw * (28 / 375));
+  }
+  .archiveDate {
+    margin-right: calc(100vw * 20 / 375);
+  }
+}
 </style>

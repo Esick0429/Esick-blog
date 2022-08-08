@@ -16,7 +16,8 @@ import Footer from "../layout/Footer.vue";
 
 <style scoped>
 .view {
-  width: 100%;
+  max-width: 60%;
+  box-sizing: border-box;
   position: relative;
   margin: 0 auto;
   padding: 0 calc(100vw * (30 / 1920));
@@ -30,8 +31,13 @@ section {
 }
 @media screen and (max-width: 768px) {
   .view {
-    width: 100%;
+    max-width: 100%;
     padding: 0;
+  }
+  section {
+    margin-top: calc(100vw * (30 / 375));
+    /* margin-bottom: calc(100vw * (200 / 375)); */
+    /* padding: 0 calc(100vw * (5 / 375)); */
   }
 }
 </style>

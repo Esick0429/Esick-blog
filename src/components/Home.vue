@@ -34,5 +34,27 @@ onMounted(async () => {
 }
 .srcoll_view {
   width: 100%;
+  height: 75vh;
+  overflow: auto;
+  margin-top: 30px;
+}
+.srcoll_view::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+.srcoll_view::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 30px;
+  box-shadow: inset 2px 2px 2px hsla(0, 0%, 100%, 0.25),
+    inset -2px -2px 2px rgba(0, 0, 0, 0.25);
+}
+.srcoll_view::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+}
+@media screen and (max-width: 768px) {
+  .srcoll_view {
+    height: 60vh;
+    margin: 0;
+  }
 }
 </style>
