@@ -28,6 +28,9 @@ section {
   margin-top: calc(100vw * (40 / 1920));
   margin-bottom: calc(100vw * (20 / 1920));
   padding: 0 calc(100vw * (5 / 1920));
+  display: flex;
+  height: 80vh;
+  flex-direction: column;
 }
 @media screen and (max-width: 768px) {
   .view {

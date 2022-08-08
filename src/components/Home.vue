@@ -34,7 +34,8 @@ onMounted(async () => {
 }
 .srcoll_view {
   width: 100%;
-  height: 75vh;
+  /* height: 75vh; */
+  flex: 1;
   overflow: auto;
   margin-top: 30px;
 }

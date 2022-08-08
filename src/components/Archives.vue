@@ -42,12 +42,12 @@ onMounted(async () => {
 }
 
 .container {
-  /* width: 60%; */
-  /* margin: 0 auto; */
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 section {
-  height: 70vh;
   overflow: auto;
 }
 
@@ -86,7 +86,7 @@ section::-webkit-scrollbar-track {
 @media screen and (max-width: 768px) {
   .container {
     width: 100%;
-    padding: 0 8px;
+    padding: 0 12px;
     box-sizing: border-box;
   }
 
