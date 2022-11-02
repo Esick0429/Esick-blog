@@ -1,23 +1,10 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import { useRouter } from "vue-router";
+import config from "../assets/js/config.js";
+const linkList = config.linkList;
 const logo =
   "https://api.esick.work/images/image_1642000592878_a8a933dd84336dc9c3570b3886bf0c9a.jpeg";
-const linkList = [
-  {
-    name: "Home",
-    url: "index",
-  },
-  {
-    name: "tagList",
-    url: "tagList",
-  },
-  {
-    name: "Github",
-    url: "https://github.com/Esick0429",
-    outside: true,
-  },
-];
 let flag = ref(false);
 const router = useRouter();
 function openDrop() {
@@ -46,7 +33,8 @@ function jump(index: string) {
           "
           class="nav_content"
         >
-          <a :href="i.url" class="linkStyle">{{ i.name }}</a>
+          <div @click="jump(i.url)" v-if="!i.outside">{{ i.name }}</div>
+          <a :href="i.url" class="linkStyle" v-if="i.outside">{{ i.name }}</a>
         </div>
       </div>
     </div>
@@ -107,18 +95,20 @@ header {
   justify-content: space-between;
   padding: 0 5px;
 }
-.nav div {
+.nav_content {
   width: 20%;
   font-size: var(--contentFs);
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   flex: 1;
 }
 .linkStyle {
   text-decoration: none;
-  color: #fff;
+  color: #000;
 }
 .linkStyle:visited {
-  color: #fff;
+  color: #000;
 }
 .linkStyle:hover {
   color: #999999;

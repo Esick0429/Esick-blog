@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { useRouter } from "vue-router";
 import config from "../assets/js/config.js";
-console.log(config);
 const router = useRouter();
 // const linkList = [
 //   {
@@ -82,6 +81,9 @@ footer {
 .nav div {
   width: 100%;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   flex: 1;
 }
 .linkStyle {
