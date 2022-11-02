@@ -13,6 +13,19 @@ body {
   margin: 0;
   background-color: #99cccc;
 }
+pre {
+  overflow: auto;
+  position: relative;
+  line-height: 1.75;
+  padding: calc(100vw * (18 / 1920));
+  background: #f8f8f8;
+}
+pre > code {
+  color: #333;
+  font-weight: 600;
+  font-size: calc(100vw * (16 / 1920));
+  font-family: "sans-serif";
+}
 #app {
   --titleFs: calc(100vw * (36 / 1920));
   --contentFs: calc(100vw * (18 / 1920));
@@ -27,6 +40,15 @@ body {
   #app {
     --titleFs: calc(100vw * (24 / 375));
     --contentFs: calc(100vw * (18 / 375));
+  }
+  pre {
+    overflow: auto;
+    position: relative;
+    line-height: 1.75;
+    padding: calc(100vw * (10 / 375));
+  }
+  pre > code {
+    font-size: calc(100vw * (16 / 375));
   }
 }
 </style>

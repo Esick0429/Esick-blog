@@ -1,10 +1,10 @@
-import { createRouter, createWebHashHistory } from "vue-router";
+import { createRouter, createWebHistory } from "vue-router";
 const home = () => import("../layout/HomeView.vue");
 const homeIndex = () => import("../components/Home.vue");
 const Notfound = () => import("../components/Not found.vue");
 const archives = () => import("../components/Archives.vue");
 const tagList = () => import("../components/TagList.vue");
-const routes:any = [
+const routes: any = [
   { path: "/", redirect: "/index" },
   { path: "/:pathMatch(.*)", redirect: "/404" },
   {
@@ -34,10 +34,9 @@ const routes:any = [
       },
     ],
   },
- 
 ];
 const router = createRouter({
-  history: createWebHashHistory(),
+  history: createWebHistory(),
   routes,
 });
 export { router };

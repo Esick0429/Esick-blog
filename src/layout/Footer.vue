@@ -1,21 +1,24 @@
 <script setup lang="ts">
 import { useRouter } from "vue-router";
+import config from "../assets/js/config.js";
+console.log(config);
 const router = useRouter();
-const linkList = [
-  {
-    name: "Home",
-    url: "index",
-  },
-  {
-    name: "tagList",
-    url: "tagList",
-  },
-  {
-    name: "Github",
-    url: "https://github.com/Esick0429",
-    outside: true,
-  },
-];
+// const linkList = [
+//   {
+//     name: "Home",
+//     url: "index",
+//   },
+//   {
+//     name: "tagList",
+//     url: "tagList",
+//   },
+//   {
+//     name: "Github",
+//     url: "https://github.com/Esick0429",
+//     outside: true,
+//   },
+// ];
+const linkList = config.linkList;
 function jump(index: string) {
   router.push(index);
 }
@@ -23,7 +26,7 @@ function jump(index: string) {
 <template>
   <footer>
     <div class="footer_left">
-      <span>八百标兵奔北坡</span>
+      <span>安得广厦千万间，大庇天下寒士俱欢颜！</span>
     </div>
     <div class="footer_right flex column">
       <div class="nav flex_row">
