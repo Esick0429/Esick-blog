@@ -2,6 +2,7 @@
 import { useRouter, useRoute } from "vue-router";
 import { onMounted, reactive, ref } from "vue";
 import { getArchiveData } from "../api/index";
+import Editor from "../common/Editor.vue";
 import dayjs from "dayjs";
 const route = useRoute();
 
@@ -25,7 +26,8 @@ onMounted(async () => {
     </header>
     <section>
       <div class="archive_content">
-        <div v-html="archiveData.archiveContent"></div>
+        <!-- <div v-html="archiveData.archiveContent"></div> -->
+        <Editor :value="archiveData.archiveContent"></Editor>
       </div>
     </section>
   </div>
@@ -69,12 +71,14 @@ section::-webkit-scrollbar-track {
   font-size: var(--titleFs);
   color: var(--titlecolor);
   font-family: cursive;
+  padding: 0 10px;
 }
 
 .archive_info {
   font-size: var(--contentFs);
   justify-content: space-between;
   margin: 8px 0;
+  padding: 0 10px;
   width: 20%;
 }
 
@@ -86,7 +90,6 @@ section::-webkit-scrollbar-track {
 @media screen and (max-width: 768px) {
   .container {
     width: 100%;
-    padding: 0 12px;
     box-sizing: border-box;
   }
 
