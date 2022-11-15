@@ -1,7 +1,5 @@
 <template>
-  <div style="border: 1px solid #ccc">
-    <Editor v-model="value" :default-config="editorConfig" />
-  </div>
+  <Editor v-model="value" :default-config="editorConfig" />
 </template>
 <script setup>
 import "@wangeditor/editor/dist/css/style.css"; // 引入 css

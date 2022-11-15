@@ -165,6 +165,8 @@ header {
 @media screen and (max-width: 768px) {
   header {
     justify-content: space-between;
+    padding: 0 10px;
+    box-sizing: border-box;
   }
   .logo img {
     width: 2rem;
