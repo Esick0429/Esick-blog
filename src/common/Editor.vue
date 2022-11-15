@@ -27,6 +27,9 @@ const handleCreated = (editor) => {
 </script>
 <style>
 @media screen and (max-width: 768px) {
+  #w-e-textarea-1 {
+    padding: 0 10px 0 0!important;
+  }
   .w-e-text-container pre > code {
     font-size: calc(100vw * (16 / 375)) !important;
   }

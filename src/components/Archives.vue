@@ -71,14 +71,12 @@ section::-webkit-scrollbar-track {
   font-size: var(--titleFs);
   color: var(--titlecolor);
   font-family: cursive;
-  padding: 0 10px;
 }
 
 .archive_info {
   font-size: var(--contentFs);
   justify-content: space-between;
   margin: 8px 0;
-  padding: 0 10px;
   width: 20%;
 }
 

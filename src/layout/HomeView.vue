@@ -41,7 +41,7 @@ section {
   section {
     margin-top: calc(100vw * (30 / 375));
     /* margin-bottom: calc(100vw * (200 / 375)); */
-    /* padding: 0 calc(100vw * (5 / 375)); */
+    padding: 0 calc(100vw * (10 / 375));
   }
 }
 </style>
