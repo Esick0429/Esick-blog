@@ -21,6 +21,7 @@ import Footer from "../layout/Footer.vue";
   position: relative;
   margin: 0 auto;
   padding: 0 calc(100vw * (30 / 1920));
+  overflow-x: hidden;
   /* height: 100vh; */
   min-height: 100vh;
 }
