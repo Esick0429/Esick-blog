@@ -1,28 +1,35 @@
 <script lang="ts" setup>
 import { onMounted, ref } from "vue";
-import { ElSelect, ElOption, ElButton } from "element-plus";
+import { ElSelect, ElOption } from "element-plus";
 import { getTagList, getTagArchiveList } from "../api/index";
 import { useRoute, useRouter } from "vue-router";
 import dayjs from "dayjs";
 const route = useRoute();
 const router = useRouter();
-const value = ref(`${route.params.tagName ?? "Vue2"}`);
+const value = ref(route.params.tagName);
 let options = ref([]);
 let archivesList = ref([]);
+let dataIsNone = ref(false);
 // const loading = ref(true)
 onMounted(async () => {
+  let result = await getTagList();
+  options.value = result;
   console.log(value.value);
 
-  let tagData = await getTagList();
-  selectTag();
-  options.value = tagData.data;
+  if (!value.value) {
+    value.value = result[1].tagName;
+  }
+  await selectTag();
 });
 async function selectTag() {
   // loading.value = true
-  let archiveData = await getTagArchiveList({ tagName: value.value });
-  if (archiveData) {
-    archivesList.value = archiveData.data;
+  let result = await getTagArchiveList({ tagName: value.value });
+  if (result.length) {
+    archivesList.value = result;
+    dataIsNone.value = false;
     // loading.value = false
+  } else {
+    dataIsNone.value = true;
   }
 }
 function jumpArchive(archiveId: any) {
@@ -51,11 +58,14 @@ function jumpArchive(archiveId: any) {
     </el-select>
   </div>
   <div class="flex_column">
-    <div v-for="i of archivesList" class="archiveItem">
-      <div class="archiveDate">
-        {{ dayjs(i["archiveDate"]).format("YYYY-MM-DD") }}
+    <div v-if="dataIsNone">该Tag下暂时没有文章噢~</div>
+    <div v-else>
+      <div v-for="i of archivesList" class="archiveItem">
+        <div class="archiveDate">
+          {{ dayjs(i["archiveDate"]).format("YYYY-MM-DD") }}
+        </div>
+        <div @click="jumpArchive(i['archiveId'])">{{ i["archiveTitle"] }}</div>
       </div>
-      <div @click="jumpArchive(i['archiveId'])">{{ i["archiveTitle"] }}</div>
     </div>
   </div>
 </template>

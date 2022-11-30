@@ -8,8 +8,7 @@ let ArchiveData = ref([]);
 const router = useRouter();
 onMounted(async () => {
   let res = await getArchiveList();
-  console.log(res.data);
-  ArchiveData.value = res.data;
+  ArchiveData.value = res;
 });
 function jumpArchive(archiveId: any) {
   router.push({

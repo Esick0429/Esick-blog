@@ -11,8 +11,8 @@ let archiveId = route.query.archiveId as string;
 let archiveData: any = ref({});
 onMounted(async () => {
   let { data } = await getArchiveData({ archiveId: archiveId });
-  data.data.archiveDate = dayjs(data.data.archiveDate).format("YY-MM-DD");
-  archiveData.value = data.data;
+  data.archiveDate = dayjs(data.archiveDate).format("YY-MM-DD");
+  archiveData.value = data;
 });
 </script>
 <template>

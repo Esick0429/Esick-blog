@@ -4,7 +4,7 @@ import { useRouter } from "vue-router";
 import config from "../assets/js/config.js";
 const linkList = config.linkList;
 const logo =
-  "https://api.esick.work/images/image_1642000592878_a8a933dd84336dc9c3570b3886bf0c9a.jpeg";
+  "https://api.esick.work/images/image_1669803930818_a8a933dd84336dc9c3570b3886bf0c9a.jpeg";
 let flag = ref(false);
 const router = useRouter();
 function openDrop() {

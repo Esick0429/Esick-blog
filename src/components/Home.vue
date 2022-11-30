@@ -5,7 +5,7 @@ import HomeItem from "../common/HomeItem.vue";
 let everdyQuotes: any = ref({});
 onMounted(async () => {
   let res = await getEverydayQuotes();
-  everdyQuotes.value = res.data;
+  everdyQuotes.value = res;
   console.log(everdyQuotes);
 });
 </script>

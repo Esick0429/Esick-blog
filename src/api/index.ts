@@ -1,42 +1,42 @@
-import request from '../util/request.js'
+import request from "../util/request.js";
 //获取所有文章列表
-export function getArchiveList(data?:object) {
+export function getArchiveList(data?: object) {
   return request({
-    url: '/getArchiveList',
-    method: 'get',
-    data
-  })
+    url: "/getArchiveList",
+    method: "get",
+    data,
+  });
 }
 //获取文章信息
-export function getArchiveData(data:{archiveId:string}) {
+export function getArchiveData(data: { archiveId: string }) {
   return request({
     url: `/getArchiveData?archiveId=${data.archiveId}`,
-    method: 'get',
-    data
-  })
+    method: "get",
+    data,
+  });
 }
 //获取标签列表
-export function getTagList(data?:any){
+export function getTagList(data?: any) {
   return request({
     url: `/getTagList`,
-    method: 'get',
-    data
-  })
+    method: "get",
+    data,
+  });
 }
 
 //根据tagid获取文章列表
-export function getTagArchiveList(data:{tagName:string}){
+export function getTagArchiveList(data: { tagName: any }) {
   return request({
     url: `/getTagArchiveList?tagName=${data.tagName}`,
-    method: 'get',
-    data
-  })
+    method: "get",
+    data,
+  });
 }
 
 //获取每日一句
-export  function getEverydayQuotes(){
+export function getEverydayQuotes() {
   return request({
-    url:`/getEverydayQuotes`,
-    method: 'get'
-  })
+    url: `/getEverydayQuotes`,
+    method: "get",
+  });
 }
