@@ -6,17 +6,19 @@ let everdyQuotes: any = ref({});
 onMounted(async () => {
   let res = await getEverydayQuotes();
   everdyQuotes.value = res;
-  console.log(everdyQuotes);
 });
 </script>
 <template>
-  <div class="about">
+  <div
+    class="about"
+    v-if="everdyQuotes.content && everdyQuotes.content.length > 1"
+  >
     <span>
       {{ everdyQuotes.content }}<br />
       {{ everdyQuotes.translation }}
     </span>
     <br />
-    <span style="float: right"> ——{{ everdyQuotes.author }} </span>
+    <span style="float: right">{{ everdyQuotes.author }} </span>
   </div>
   <div class="srcoll_view">
     <HomeItem />
