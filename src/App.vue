@@ -13,8 +13,6 @@ body {
   margin: 0;
   background-color: #99cccc;
   --w-e-textarea-bg-color: none;
-  filter: grayscale(0.95);
-  -webkit-filter: grayscale(0.95);
 }
 #app {
   --titleFs: calc(100vw * (36 / 1920));
