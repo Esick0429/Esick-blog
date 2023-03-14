@@ -13,7 +13,7 @@ onMounted(async () => {
     class="about"
     v-if="everdyQuotes.content && everdyQuotes.content.length > 1"
   >
-    <span>
+    <span style="font-size: 16px">
       {{ everdyQuotes.content }}<br />
       {{ everdyQuotes.translation }}
     </span>

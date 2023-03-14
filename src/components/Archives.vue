@@ -70,7 +70,6 @@ section::-webkit-scrollbar-track {
 .title {
   font-size: var(--titleFs);
   color: var(--titlecolor);
-  font-family: cursive;
 }
 
 .archive_info {

@@ -70,6 +70,13 @@ function gotoTag(tagName: string) {
   } */
   .articleDate {
     margin-bottom: calc(100vw * (5 / 375));
+    width: 30%;
+  }
+  .articleTitle {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    flex: 1;
   }
   .itemTitle {
     letter-spacing: 0.01em;
