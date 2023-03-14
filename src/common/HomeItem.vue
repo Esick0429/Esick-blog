@@ -3,9 +3,9 @@ import { onMounted, ref } from "vue";
 import { useRoute, useRouter } from "vue-router";
 import { getArchiveList } from "../api/index";
 import dayjs from "dayjs";
-
 let ArchiveData = ref([]);
 const router = useRouter();
+const array = defineProps(["array"]);
 onMounted(async () => {
   let res = await getArchiveList();
   ArchiveData.value = res;
@@ -17,20 +17,9 @@ function jumpArchive(archiveId: any) {
     query: { archiveId: archiveId },
   });
 }
-function gotoTag(tagName: string) {
-  router.push({
-    name: "tagList",
-    params: { tagName: tagName },
-  });
-}
 </script>
 <template>
   <div class="item" v-for="(i, index) of ArchiveData">
-    <div class="itemTitle" @click="gotoTag(`${index}`)">
-      <a style="text-decoration: none; color: var(--titlecolor)">
-        {{ index }}
-      </a>
-    </div>
     <div class="itemContent" v-for="j of i" :key="j['archiveTitle']">
       <div class="articleDate">
         {{ dayjs(j["archiveDate"]).format("YYYY-MM-DD") }}
@@ -42,15 +31,6 @@ function gotoTag(tagName: string) {
   </div>
 </template>
 <style scoped>
-.itemTitle {
-  letter-spacing: 0.01em;
-  font-size: var(--titleFs);
-  font-style: normal;
-  font-weight: 700;
-  margin-top: calc(100vw * (30 / 1920));
-  margin-bottom: calc(100vw * (10 / 1920));
-  display: block;
-}
 .itemContent {
   display: flex;
   flex-direction: row;
@@ -78,15 +58,7 @@ function gotoTag(tagName: string) {
     white-space: nowrap;
     flex: 1;
   }
-  .itemTitle {
-    letter-spacing: 0.01em;
-    font-size: var(--titleFs);
-    font-style: normal;
-    font-weight: 700;
-    margin-top: calc(100vw * (12 / 375));
-    margin-bottom: calc(100vw * (10 / 375));
-    display: block;
-  }
+
   .itemContent {
     display: flex;
     flex-direction: row;
