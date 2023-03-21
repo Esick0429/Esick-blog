@@ -121,6 +121,7 @@ header {
   position: absolute;
   top: calc(100vw * (40 / 375));
   /* left: -0.3rem; */
+  left: 0;
   width: 100%;
 }
 .dropDown ul {

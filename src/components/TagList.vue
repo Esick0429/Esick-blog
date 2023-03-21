@@ -10,7 +10,7 @@ const route = useRoute();
 const router = useRouter();
 const value = ref(route.params.tagName);
 let options = ref([]);
-let archivesList = ref([]);
+let archivesList = ref({value:[]});
 let dataIsNone = ref(false);
 // const loading = ref(true)
 onMounted(async () => {
@@ -24,7 +24,8 @@ onMounted(async () => {
 async function selectTag() {
   let result = await getTagArchiveList({ tagName: value.value });
   if (result.length) {
-    archivesList.value = result;
+    archivesList.value.value = result;
+    console.log(archivesList.value);
     dataIsNone.value = false;
   } else {
     dataIsNone.value = true;
@@ -33,25 +34,14 @@ async function selectTag() {
 </script>
 <template>
   <div class="tag_top">
-    <el-select
-      v-model="value"
-      class="m-2"
-      placeholder="Select"
-      size="large"
-      @change="selectTag"
-    >
-      <el-option
-        v-for="item in options"
-        :key="item['tagId']"
-        :label="item['tagName']"
-        :value="item['tagName']"
-      />
+    <el-select v-model="value" class="m-2" placeholder="Select" size="large" @change="selectTag">
+      <el-option v-for="item in options" :key="item['tagId']" :label="item['tagName']" :value="item['tagName']" />
     </el-select>
   </div>
   <div class="flex_column">
     <div v-if="dataIsNone">该Tag下暂时没有文章噢~</div>
     <div v-else>
-      <HomeItem :array="archivesList"/>
+      <HomeItem :array=" archivesList " />
     </div>
   </div>
 </template>

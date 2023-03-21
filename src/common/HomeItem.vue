@@ -1,15 +1,18 @@
 <script setup lang="ts">
-import { onMounted, ref } from "vue";
+import { onMounted, Ref, ref, watchEffect } from "vue";
 import { useRoute, useRouter } from "vue-router";
-import { getArchiveList } from "../api/index";
+// import { getArchiveList } from "../api/index";
 import dayjs from "dayjs";
-let ArchiveData = ref([]);
+let ArchiveData = ref({});
 const router = useRouter();
-const array = defineProps(["array"]);
-onMounted(async () => {
-  let res = await getArchiveList();
-  ArchiveData.value = res;
-});
+const props = defineProps({
+  array: {
+    type: Object,
+    required: true,
+    default: () => []
+  },
+  tagFlag: { type: Boolean, default: false }
+})
 function jumpArchive(archiveId: any) {
   router.push({
     // path:"/archives",
@@ -17,9 +20,23 @@ function jumpArchive(archiveId: any) {
     query: { archiveId: archiveId },
   });
 }
+function gotoTag(tagName: string) {
+  router.push({
+    name: "tagList",
+    params: { tagName: tagName },
+  });
+}
+watchEffect(() => {
+  ArchiveData.value = props.array
+})
 </script>
 <template>
-  <div class="item" v-for="(i, index) of ArchiveData">
+  <div class="item" v-for="(i, index) in ArchiveData">
+    <div class="itemTitle" @click="gotoTag(`${index}`)" v-if="tagFlag">
+      <a style="text-decoration: none; color: var(--titlecolor)">
+        {{ index }}
+      </a>
+    </div>
     <div class="itemContent" v-for="j of i" :key="j['archiveTitle']">
       <div class="articleDate">
         {{ dayjs(j["archiveDate"]).format("YYYY-MM-DD") }}
@@ -41,10 +58,23 @@ function jumpArchive(archiveId: any) {
   font-size: var(--contentFs);
   line-height: calc(100vw * (40 / 1920));
 }
+
 .articleDate {
   margin-right: calc(100vw * (30 / 1920));
 }
+
+.itemTitle {
+  letter-spacing: 0.01em;
+  font-size: var(--titleFs);
+  font-style: normal;
+  font-weight: 700;
+  margin-top: calc(100vw * (30 / 1920));
+  margin-bottom: calc(100vw * (10 / 1920));
+  display: block;
+}
+
 @media screen and (max-width: 768px) {
+
   /* .itemContent {
     flex-direction: column;
   } */
@@ -52,6 +82,7 @@ function jumpArchive(archiveId: any) {
     margin-bottom: calc(100vw * (5 / 375));
     width: 30%;
   }
+
   .articleTitle {
     overflow: hidden;
     text-overflow: ellipsis;
@@ -68,6 +99,16 @@ function jumpArchive(archiveId: any) {
     height: calc(100vw * (28 / 375));
     font-size: var(--contentFs);
     line-height: calc(100vw * (28 / 375));
+  }
+
+  .itemTitle {
+    letter-spacing: 0.01em;
+    font-size: var(--titleFs);
+    font-style: normal;
+    font-weight: 700;
+    margin-top: calc(100vw * (12 / 375));
+    margin-bottom: calc(100vw * (10 / 375));
+    display: block;
   }
 }
 </style>
